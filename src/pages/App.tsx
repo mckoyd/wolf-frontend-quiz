@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import logo from '../assets/logo.svg';
 import '../styles/App.css';
@@ -20,6 +21,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <Routes>
+        <Route path="/" element={<h1>From Root</h1>} />
+      </Routes>
     </div>
   );
 }
