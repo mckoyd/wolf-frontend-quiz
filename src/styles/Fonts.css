@@ -1,0 +1,43 @@
+/**
+ * Adds Rubik fonts for regular, medium, and bold font weights
+ */
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik'), url(../assets/fonts/static/Rubik-Regular.ttf),
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  src: local('Rubik'), url(../assets/fonts/static/Rubik-Italic.ttf),
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: bold;
+  src: local('Rubik'), url(../assets/fonts/static/Rubik-Medium.ttf),
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  src: url(../assets/fonts/Rubik-VariableFont_wght.ttf),
+    format('truetype supports variations');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  src: url(../assets/fonts/Rubik-Italic-VariableFont_wght.ttf),
+    format('truetype supports variations');
+  font-weight: 300 700;
+  font-display: swap;
+}

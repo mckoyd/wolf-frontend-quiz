@@ -51,6 +51,6 @@ export const ThemeToggleContainer = styled.div`
   }
 
   .toggle-input:checked + .toggle-label::after {
-    left: 24px;
+    left: 17.3em;
   }
 `;

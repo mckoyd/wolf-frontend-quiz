@@ -1,37 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-/**
- * Adds Rubik fonts for regular, medium, and bold font weights
- */
-
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local('Rubik'),
-    url(../assets/fonts/static/Rubik-Regular.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Rubik';
-  font-style: italic;
-  font-weight: 400;
-  src:
-    local('Rubik'),
-    url(../assets/fonts/static/Rubik-Italic.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Rubik';
-  font-style: bold;
-  font-weight: 500;
-  src:
-    local('Rubik'),
-    url(../assets/fonts/static/Rubik-Medium.ttf) format('truetype');
-}
-
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */

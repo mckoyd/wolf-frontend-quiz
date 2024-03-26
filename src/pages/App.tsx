@@ -1,15 +1,18 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import FQToggleButton from '../components/FQToggleButton';
+import StartMenu from './StartMenu';
+
+import { useScreenSizeUpdate } from '../hooks/useScreenSizeUpdate';
 
 import '../styles/App.css';
 
 const App: React.FC = () => {
+  const screenSize = useScreenSizeUpdate();
   return (
     <div className="app-section">
       <Routes>
-        <Route path="/" element={<h1>From Root</h1>} />
+        <Route path="/" element={<StartMenu />} />
       </Routes>
     </div>
   );

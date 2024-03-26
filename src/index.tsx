@@ -4,11 +4,10 @@ import { RouterProvider, createHashRouter } from 'react-router-dom';
 
 import App from './pages/App';
 import GlobalStyle from './styles';
+import './styles/Fonts.css';
 import theme from './styles/theme';
 import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from 'styled-components';
-
-import './styles/index.css';
 
 const router = createHashRouter([
   {
