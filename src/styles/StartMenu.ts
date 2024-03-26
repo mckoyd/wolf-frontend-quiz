@@ -27,7 +27,7 @@ export const ToggleThemeContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 1em;
-  margin: 3em 2.5em;
+  margin: 1em;
 `;
 
 export const TitleContainer = styled.div`
@@ -36,18 +36,22 @@ export const TitleContainer = styled.div`
   font-size: 2em;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ $currentTheme: ThemeType }>`
+  color: ${(props) =>
+    props.$currentTheme === ThemeType.dark && props.theme.pureWhite};
   & span {
     font-weight: 500;
   }
 `;
 
-export const SubTitle = styled.h4`
+export const SubTitle = styled.h4<{ $currentTheme: ThemeType }>`
   margin-block: 0;
   font-size: 0.4em;
   font-weight: 300;
   font-style: italic;
   margin: 0.5em 0;
+  color: ${(props) =>
+    props.$currentTheme === ThemeType.dark ? props.theme.pureWhite : 'black'};
 `;
 
 export const SubjectCards = styled.div`
@@ -59,13 +63,18 @@ export const SubjectCards = styled.div`
   margin: 2em;
 `;
 
-export const SubjectCard = styled.div`
+export const SubjectCard = styled.div<{ $currentTheme: ThemeType }>`
   display: flex;
-  background: white;
   border-radius: 5%;
   width: 100%;
   justify-content: flex-start;
   align-items: center;
   gap: 1em;
   padding: 0.5em;
+  background: ${(props) =>
+    props.$currentTheme === ThemeType.dark
+      ? props.theme.navy
+      : props.theme.pureWhite};
+  color: ${(props) =>
+    props.$currentTheme === ThemeType.dark ? props.theme.pureWhite : 'black'};
 `;

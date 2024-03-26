@@ -41,18 +41,20 @@ const StartMenu: FC = () => {
       $currentTheme={currentTheme}
     >
       <ToggleThemeContainer className="toggle-theme-container">
-        <SunDarkIcon />
+        {currentTheme === 'light' ? <SunDarkIcon /> : <SunLightIcon />}
         <FQToggleButton
           handler={handlePlanTypeToggle}
           currentTheme={currentTheme}
         />
-        <MoonDarkIcon />
+        {currentTheme === 'light' ? <MoonDarkIcon /> : <MoonLightIcon />}
       </ToggleThemeContainer>
       <TitleContainer className="title-container">
-        <Title className="title">
+        <Title $currentTheme={currentTheme} className="title">
           Welcome to the <span className="title-bold">Frontend Quiz!</span>
         </Title>
-        <SubTitle className="subtitle">Pick a subject to get started.</SubTitle>
+        <SubTitle $currentTheme={currentTheme} className="subtitle">
+          Pick a subject to get started.
+        </SubTitle>
       </TitleContainer>
 
       <SubjectCards className="subject-cards">
@@ -69,6 +71,7 @@ const StartMenu: FC = () => {
             return (
               <SubjectCard
                 className="subject-card"
+                $currentTheme={currentTheme}
                 key={`${title}-${subjectCardIndex}`}
               >
                 <StyledIcon className="subject-icon" />
