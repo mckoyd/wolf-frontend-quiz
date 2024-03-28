@@ -20,3 +20,15 @@ export interface ISubjectCard {
   title: string;
   backgroundColor: string;
 }
+
+export interface IQuestion {
+  answer: string;
+  options: string[];
+  question: string;
+}
+
+export interface IQuestionSet {
+  icon: string;
+  questions: IQuestion[];
+  title: string;
+}

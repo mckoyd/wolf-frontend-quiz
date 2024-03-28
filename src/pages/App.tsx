@@ -1,18 +1,19 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import Question from './Question';
+import Results from './Results';
 import StartMenu from './StartMenu';
-
-import { useScreenSizeUpdate } from '../hooks/useScreenSizeUpdate';
 
 import '../styles/App.css';
 
 const App: React.FC = () => {
-  const screenSize = useScreenSizeUpdate();
   return (
     <div className="app-section">
       <Routes>
         <Route path="/" element={<StartMenu />} />
+        <Route path="/question/:subject/:index" element={<Question />} />
+        <Route path="/results/:subject" element={<Results />} />
       </Routes>
     </div>
   );

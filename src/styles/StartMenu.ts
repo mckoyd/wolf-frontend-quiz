@@ -63,7 +63,7 @@ export const SubjectCards = styled.div`
   margin: 2em;
 `;
 
-export const SubjectCard = styled.div<{ $currentTheme: ThemeType }>`
+export const SubjectCard = styled.button<{ $currentTheme: ThemeType }>`
   display: flex;
   border-radius: 5%;
   width: 100%;
@@ -71,6 +71,7 @@ export const SubjectCard = styled.div<{ $currentTheme: ThemeType }>`
   align-items: center;
   gap: 1em;
   padding: 0.5em;
+  cursor: pointer;
   background: ${(props) =>
     props.$currentTheme === ThemeType.dark
       ? props.theme.navy

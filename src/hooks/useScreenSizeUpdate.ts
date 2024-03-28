@@ -10,7 +10,7 @@ export const useScreenSizeUpdate: () => number = () => {
   useEffect(() => {
     window.addEventListener('resize', updateScreenSize);
     return () => window.removeEventListener('resize', updateScreenSize);
-  }, [screenSize]);
+  }, [screenSize, updateScreenSize]);
 
   return screenSize;
 };

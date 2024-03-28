@@ -1,4 +1,5 @@
 import React, { FC, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
@@ -16,14 +17,15 @@ import { themeState } from '../state/themeState';
 import {
   StartMenuContainer,
   SubTitle,
-  SubjectCard,
   SubjectCards,
   Title,
   TitleContainer,
   ToggleThemeContainer,
 } from '../styles/StartMenu';
+import '../styles/StartMenu.css';
 
 const StartMenu: FC = () => {
+  const navigate = useNavigate();
   const [currentTheme, setCurrentTheme] = useRecoilState(themeState);
 
   const handlePlanTypeToggle = useCallback(
@@ -32,7 +34,14 @@ const StartMenu: FC = () => {
         event.currentTarget.checked ? ThemeType.dark : ThemeType.light
       );
     },
-    []
+    [setCurrentTheme]
+  );
+
+  const handleSubjectCardClick = useCallback(
+    (title: string, subjectCardIndex: number) => {
+      navigate(`/question/${title}/${subjectCardIndex}`);
+    },
+    [navigate]
   );
 
   return (
@@ -69,14 +78,14 @@ const StartMenu: FC = () => {
               padding: 0.3em;
             `;
             return (
-              <SubjectCard
-                className="subject-card"
-                $currentTheme={currentTheme}
+              <button
+                className={`subject-card ${currentTheme === ThemeType.light ? 'light' : 'dark'}`}
                 key={`${title}-${subjectCardIndex}`}
+                onClick={() => handleSubjectCardClick(title, subjectCardIndex)}
               >
                 <StyledIcon className="subject-icon" />
                 <p>{title}</p>
-              </SubjectCard>
+              </button>
             );
           }
         )}

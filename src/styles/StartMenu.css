@@ -1,0 +1,21 @@
+.subject-card {
+  display: flex;
+  border-radius: 5%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em;
+  cursor: pointer;
+  border: transparent;
+}
+
+.light {
+  background: white;
+  color: 'black';
+}
+
+.dark {
+  background: #3b4d66;
+  color: white;
+}

@@ -1,0 +1,49 @@
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4em 1em;
+  gap: 1em;
+}
+
+.heading-title {
+  font-weight: 300;
+  font-size: 2.5em;
+  margin-block: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.bold {
+  margin-block: 0;
+  width: 100%;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.score-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 1em 0;
+  border-radius: 10px;
+}
+
+.score-ctn {
+  width: 45%;
+  justify-content: space-around;
+}
+
+.score {
+  margin-block: 0;
+  font-size: 5em;
+}
+
+.total {
+  color: #626c7f;
+  font-weight: 300;
+}
