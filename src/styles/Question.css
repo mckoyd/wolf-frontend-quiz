@@ -121,8 +121,26 @@
   color: white !important;
 }
 
+.right-answer {
+  background-color: #26d782;
+  color: white !important;
+}
+
 .selected-answer-border {
   border: 3px #a729f5 solid;
+}
+
+.right-answer-border {
+  border: 3px #26d782 solid;
+}
+
+.wrong-answer {
+  background-color: #ee5454;
+  color: white !important;
+}
+
+.wrong-answer-border {
+  border: 3px solid #ee5454;
 }
 
 .submit-button {
@@ -133,4 +151,8 @@
   background: #a729f5;
   color: white;
   letter-spacing: 1px;
+}
+
+.answer-icon {
+  margin-left: auto;
 }

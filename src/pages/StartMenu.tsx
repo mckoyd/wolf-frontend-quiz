@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { ISubjectCard, ThemeType } from '../interfaces';
 
 import FQToggleButton from '../components/FQToggleButton';
+import ToggleBtn from '../components/ToggleBtn';
 
 import { ReactComponent as MoonDarkIcon } from '../assets/images/icon-moon-dark.svg';
 import { ReactComponent as MoonLightIcon } from '../assets/images/icon-moon-light.svg';
@@ -28,14 +29,11 @@ const StartMenu: FC = () => {
   const navigate = useNavigate();
   const [currentTheme, setCurrentTheme] = useRecoilState(themeState);
 
-  const handlePlanTypeToggle = useCallback(
-    (event: React.FormEvent<HTMLInputElement>) => {
-      setCurrentTheme(
-        event.currentTarget.checked ? ThemeType.dark : ThemeType.light
-      );
-    },
-    [setCurrentTheme]
-  );
+  const handlePlanTypeToggle = useCallback(() => {
+    setCurrentTheme((prev) =>
+      prev === ThemeType.dark ? ThemeType.light : ThemeType.dark
+    );
+  }, [setCurrentTheme]);
 
   const handleSubjectCardClick = useCallback(
     (title: string, subjectCardIndex: number) => {
@@ -51,10 +49,7 @@ const StartMenu: FC = () => {
     >
       <ToggleThemeContainer className="toggle-theme-container">
         {currentTheme === 'light' ? <SunDarkIcon /> : <SunLightIcon />}
-        <FQToggleButton
-          handler={handlePlanTypeToggle}
-          currentTheme={currentTheme}
-        />
+        <ToggleBtn handler={handlePlanTypeToggle} currentTheme={currentTheme} />
         {currentTheme === 'light' ? <MoonDarkIcon /> : <MoonLightIcon />}
       </ToggleThemeContainer>
       <TitleContainer className="title-container">

@@ -26,14 +26,14 @@ export const ToggleThemeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 1em;
+  gap: 0.5em;
   margin: 1em;
 `;
 
 export const TitleContainer = styled.div`
-  margin: 0 1em;
+  margin: 1em;
   font-weight: 300;
-  font-size: 2em;
+  font-size: 2.5em;
 `;
 
 export const Title = styled.div<{ $currentTheme: ThemeType }>`
@@ -46,7 +46,7 @@ export const Title = styled.div<{ $currentTheme: ThemeType }>`
 
 export const SubTitle = styled.h4<{ $currentTheme: ThemeType }>`
   margin-block: 0;
-  font-size: 0.4em;
+  font-size: 0.5em;
   font-weight: 300;
   font-style: italic;
   margin: 0.5em 0;
@@ -60,7 +60,7 @@ export const SubjectCards = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1em;
-  margin: 2em;
+  margin: 3em 2em;
 `;
 
 export const SubjectCard = styled.button<{ $currentTheme: ThemeType }>`
@@ -72,6 +72,7 @@ export const SubjectCard = styled.button<{ $currentTheme: ThemeType }>`
   gap: 1em;
   padding: 0.5em;
   cursor: pointer;
+  font-size: 1.5em;
   background: ${(props) =>
     props.$currentTheme === ThemeType.dark
       ? props.theme.navy
