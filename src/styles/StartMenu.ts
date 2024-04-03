@@ -20,6 +20,8 @@ export const StartMenuContainer = styled.div<{ $currentTheme: ThemeType }>`
       ? props.theme.darkNavy
       : props.theme.lightGrey};
   height: 100vh;
+  width: 100vw;
+  overflow: scroll;
 `;
 
 export const ToggleThemeContainer = styled.div`
@@ -34,6 +36,9 @@ export const TitleContainer = styled.div`
   margin: 1em;
   font-weight: 300;
   font-size: 2.5em;
+  @media only screen and (min-width: 600px) {
+    font-size: 4em;
+  }
 `;
 
 export const Title = styled.div<{ $currentTheme: ThemeType }>`
@@ -52,6 +57,9 @@ export const SubTitle = styled.h4<{ $currentTheme: ThemeType }>`
   margin: 0.5em 0;
   color: ${(props) =>
     props.$currentTheme === ThemeType.dark ? props.theme.pureWhite : 'black'};
+  @media only screen and (min-width: 1200px) {
+    margin: 1em 0;
+  }
 `;
 
 export const SubjectCards = styled.div`
@@ -61,11 +69,14 @@ export const SubjectCards = styled.div`
   align-items: center;
   gap: 1em;
   margin: 3em 2em;
+  @media only screen and (min-width: 600px) {
+    margin: 4em;
+  }
 `;
 
 export const SubjectCard = styled.button<{ $currentTheme: ThemeType }>`
   display: flex;
-  border-radius: 5%;
+  border-radius: 10px;
   width: 100%;
   justify-content: flex-start;
   align-items: center;
@@ -79,4 +90,7 @@ export const SubjectCard = styled.button<{ $currentTheme: ThemeType }>`
       : props.theme.pureWhite};
   color: ${(props) =>
     props.$currentTheme === ThemeType.dark ? props.theme.pureWhite : 'black'};
+  @media only screen and (min-width: 600px) {
+    font-size: 1.75em;
+  }
 `;

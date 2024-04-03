@@ -52,39 +52,43 @@ const StartMenu: FC = () => {
         <ToggleBtn handler={handlePlanTypeToggle} currentTheme={currentTheme} />
         {currentTheme === 'light' ? <MoonDarkIcon /> : <MoonLightIcon />}
       </ToggleThemeContainer>
-      <TitleContainer className="title-container">
-        <Title $currentTheme={currentTheme} className="title">
-          Welcome to the <span className="title-bold">Frontend Quiz!</span>
-        </Title>
-        <SubTitle $currentTheme={currentTheme} className="subtitle">
-          Pick a subject to get started.
-        </SubTitle>
-      </TitleContainer>
+      <div className="title-subject-container">
+        <TitleContainer className="title-container">
+          <Title $currentTheme={currentTheme} className="title">
+            Welcome to the <span className="title-bold">Frontend Quiz!</span>
+          </Title>
+          <SubTitle $currentTheme={currentTheme} className="subtitle">
+            Pick a subject to get started.
+          </SubTitle>
+        </TitleContainer>
 
-      <SubjectCards className="subject-cards">
-        {subjectCards.map(
-          (
-            { Icon, title, backgroundColor }: ISubjectCard,
-            subjectCardIndex: number
-          ) => {
-            const StyledIcon = styled(Icon)`
-              background: ${backgroundColor};
-              border-radius: 10px;
-              padding: 0.3em;
-            `;
-            return (
-              <button
-                className={`subject-card ${currentTheme === ThemeType.light ? 'light' : 'dark'}`}
-                key={`${title}-${subjectCardIndex}`}
-                onClick={() => handleSubjectCardClick(title, subjectCardIndex)}
-              >
-                <StyledIcon className="subject-icon" />
-                <p>{title}</p>
-              </button>
-            );
-          }
-        )}
-      </SubjectCards>
+        <SubjectCards className="subject-cards">
+          {subjectCards.map(
+            (
+              { Icon, title, backgroundColor }: ISubjectCard,
+              subjectCardIndex: number
+            ) => {
+              const StyledIcon = styled(Icon)`
+                background: ${backgroundColor};
+                border-radius: 10px;
+                padding: 0.3em;
+              `;
+              return (
+                <button
+                  className={`subject-card ${currentTheme === ThemeType.light ? 'light' : 'dark'}`}
+                  key={`${title}-${subjectCardIndex}`}
+                  onClick={() =>
+                    handleSubjectCardClick(title, subjectCardIndex)
+                  }
+                >
+                  <StyledIcon className="subject-icon" />
+                  <p>{title}</p>
+                </button>
+              );
+            }
+          )}
+        </SubjectCards>
+      </div>
     </StartMenuContainer>
   );
 };
