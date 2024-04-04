@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useRecoilState } from 'recoil';
@@ -6,7 +6,6 @@ import styled from 'styled-components';
 
 import { ISubjectCard, ThemeType } from '../interfaces';
 
-import FQToggleButton from '../components/FQToggleButton';
 import ToggleBtn from '../components/ToggleBtn';
 
 import { ReactComponent as MoonDarkIcon } from '../assets/images/icon-moon-dark.svg';
@@ -49,7 +48,11 @@ const StartMenu: FC = () => {
     >
       <ToggleThemeContainer className="toggle-theme-container">
         {currentTheme === 'light' ? <SunDarkIcon /> : <SunLightIcon />}
-        <ToggleBtn handler={handlePlanTypeToggle} currentTheme={currentTheme} />
+        <ToggleBtn
+          handler={handlePlanTypeToggle}
+          currentTheme={currentTheme}
+          toggleClass="start-toggle-width"
+        />
         {currentTheme === 'light' ? <MoonDarkIcon /> : <MoonLightIcon />}
       </ToggleThemeContainer>
       <div className="title-subject-container">

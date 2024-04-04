@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 
 import { ThemeType } from '../interfaces';
 
-import FQToggleButton from '../components/FQToggleButton';
+import ToggleBtn from '../components/ToggleBtn';
 
 import { ReactComponent as AccessibilityIcon } from '../assets/images/icon-accessibility.svg';
 import { ReactComponent as CSSIcon } from '../assets/images/icon-css.svg';
@@ -27,14 +27,11 @@ const Results: React.FC = () => {
   const [Icon, setIcon] =
     useState<React.FunctionComponent<React.SVGProps<SVGSVGElement>>>();
 
-  const handlePlanTypeToggle = useCallback(
-    (event: React.FormEvent<HTMLInputElement>) => {
-      setCurrentTheme(
-        event.currentTarget.checked ? ThemeType.dark : ThemeType.light
-      );
-    },
-    [setCurrentTheme]
-  );
+  const handlePlanTypeToggle = useCallback(() => {
+    setCurrentTheme((prev) =>
+      prev === ThemeType.dark ? ThemeType.light : ThemeType.dark
+    );
+  }, [setCurrentTheme]);
 
   const handlePlayAgainButton = useCallback(() => {
     navigate('/');
@@ -57,18 +54,21 @@ const Results: React.FC = () => {
     }
   }, [subject]);
   return (
-    <div className="answers-section">
+    <div
+      className={`answers-section ${currentTheme === 'light' ? 'light-bg' : 'dark-bg'}`}
+    >
       <div className="heading-container">
         <div className="left">
           {Icon && <Icon className={`icon ${subject?.toLowerCase()}-bg`} />}
           <p className="subject-title">{subject}</p>
         </div>
         <div className="right">
-          <ToggleThemeContainer className="toggle-theme-container">
+          <ToggleThemeContainer className="toggle-theme-container results-toggle-container">
             {currentTheme === 'light' ? <SunDarkIcon /> : <SunLightIcon />}
-            <FQToggleButton
+            <ToggleBtn
               handler={handlePlanTypeToggle}
               currentTheme={currentTheme}
+              toggleClass={'results-toggle-width'}
             />
             {currentTheme === 'light' ? <MoonDarkIcon /> : <MoonLightIcon />}
           </ToggleThemeContainer>
@@ -77,13 +77,19 @@ const Results: React.FC = () => {
       <div className="result-container">
         <p className="heading-title">Quiz completed</p>
         <p className="bold">You scored...</p>
-        <div className="score-container">
+        <div
+          className={`score-container ${currentTheme === 'dark' ? 'results-dark-card' : 'results-light-card'}`}
+        >
           <div className="left score-ctn">
             {Icon && <Icon className={`icon ${subject?.toLowerCase()}-bg`} />}
             <p className="subject-title">{subject}</p>
           </div>
           <p className="score">{location.state.rightAnswers}</p>
-          <p className="total">out of {location.state.questionSetLength}</p>
+          <p
+            className={`total ${currentTheme === 'dark' ? 'total-dark' : 'total-light'}`}
+          >
+            out of {location.state.questionSetLength}
+          </p>
         </div>
         <button
           type="button"

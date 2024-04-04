@@ -30,6 +30,16 @@ export const ToggleThemeContainer = styled.div`
   justify-content: flex-end;
   gap: 0.5em;
   margin: 1em;
+  /* & svg {
+    width: 2em;
+    height: 2em;
+  } */
+  @media only screen and (min-width: 600px) {
+    & svg {
+      width: 2em;
+      height: 2em;
+    }
+  }
 `;
 
 export const TitleContainer = styled.div`

@@ -1,3 +1,8 @@
+.answers-section {
+  height: 100vh;
+  width: 100vw;
+}
+
 .result-container {
   display: flex;
   flex-direction: column;
@@ -28,14 +33,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
   padding: 1em 0;
   border-radius: 10px;
 }
 
 .score-ctn {
   width: 45%;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .score {
@@ -44,6 +48,32 @@
 }
 
 .total {
-  color: #626c7f;
   font-weight: 300;
+}
+
+.results-toggle-width {
+  width: 60%;
+}
+
+.results-toggle-container svg {
+  width: 1.75em;
+  height: 1.75em;
+}
+
+.results-dark-card {
+  background-color: #3b4d66;
+  color: white;
+}
+
+.results-light-card {
+  background-color: white;
+  color: black;
+}
+
+.total-dark {
+  color: #abc1e1;
+}
+
+.total-light {
+  color: #626c7f;
 }

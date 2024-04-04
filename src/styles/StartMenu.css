@@ -20,9 +20,16 @@
   color: white;
 }
 
+.start-toggle-width {
+  width: 10%;
+}
+
 @media only screen and (min-width: 600px) {
   .subject-card {
     font-size: 1.75em;
+  }
+  .start-toggle-width {
+    width: 5%;
   }
 }
 
@@ -31,8 +38,8 @@
     display: flex;
   }
 
-  .title-container {
-    width: 60%;
+  .start-toggle-width {
+    width: 3%;
   }
   .subject-cards {
     width: 65%;

@@ -5,7 +5,6 @@ import { useRecoilState } from 'recoil';
 
 import { IQuestion, IQuestionSet, ThemeType } from '../interfaces';
 
-import FQToggleButton from '../components/FQToggleButton';
 import ToggleBtn from '../components/ToggleBtn';
 
 import { ReactComponent as AccessibilityIcon } from '../assets/images/icon-accessibility.svg';
@@ -62,14 +61,21 @@ const Question: FC = () => {
       console.log(
         'answer',
         currentQuestion.answer,
-        currentQuestion.options[selectedAnswerIndex],
-        isAnswerSubmitted
+        currentQuestion.options[selectedAnswerIndex]
+      );
+
+      console.log(
+        rightAnswers,
+        'isCurrentRight?',
+        currentQuestion.options[selectedAnswerIndex] === currentQuestion.answer
       );
       if (
         currentQuestion.options[selectedAnswerIndex] === currentQuestion.answer
       ) {
         setRightAnswers((prev) => prev + 1);
         setIsAnswerRight(true);
+      } else {
+        setIsAnswerRight(false);
       }
       console.log('isAnswerSubmitted', isAnswerSubmitted);
       if (isAnswerSubmitted) {
@@ -134,21 +140,26 @@ const Question: FC = () => {
           {Icon && <Icon className={`icon ${subject?.toLowerCase()}-bg`} />}
           <p className="subject-title">{subject}</p>
         </div>
-        <ToggleThemeContainer className="toggle-theme-container">
+        <ToggleThemeContainer className="toggle-theme-container question-toggle-container">
           {currentTheme === 'light' ? <SunDarkIcon /> : <SunLightIcon />}
           <ToggleBtn
             handler={handlePlanTypeToggle}
             currentTheme={currentTheme}
+            toggleClass={'question-toggle-width'}
           />
           {currentTheme === 'light' ? <MoonDarkIcon /> : <MoonLightIcon />}
         </ToggleThemeContainer>
       </div>
-      <div className="question-container">
+      <div
+        className={`question-container ${currentTheme === 'dark' ? 'dark-theme' : 'light-theme'}`}
+      >
         <p className="question-number">
           Question {currentIndex + 1} of {questionSet?.questions?.length}
         </p>
         <p className="question">{currentQuestion.question}</p>
-        <div className="progress-bar">
+        <div
+          className={`progress-bar ${currentTheme === 'dark' ? 'dark-card-bg' : 'light-card-bg'}`}
+        >
           <div
             className="progress"
             style={{ width: `${remainingQuestions}%` }}
@@ -157,9 +168,10 @@ const Question: FC = () => {
         <div className="options">
           {currentQuestion.options?.map((option: string, index: number) => (
             <button
-              className={`option-container ${selectedAnswerIndex === index ? 'selected-answer-border' : ''} ${selectedAnswerIndex === index && isAnswerSubmitted ? (isAnswerRight ? 'right-answer-border' : 'wrong-answer-border') : ''}`}
+              className={`option-container ${selectedAnswerIndex === index ? 'selected-answer-border' : ''} ${selectedAnswerIndex === index && isAnswerSubmitted ? (isAnswerRight ? 'right-answer-border' : 'wrong-answer-border') : ''} ${currentTheme === 'dark' ? 'dark-card-bg' : 'white-card-bg'}`}
               key={`${option}-${index}`}
               onClick={() => handleAnswerChoice(index)}
+              disabled={isAnswerSubmitted}
             >
               <span
                 className={`option-letter ${selectedAnswerIndex === index ? 'selected-answer' : ''} ${selectedAnswerIndex === index && isAnswerSubmitted ? (isAnswerRight ? 'right-answer' : 'wrong-answer') : ''}`}
