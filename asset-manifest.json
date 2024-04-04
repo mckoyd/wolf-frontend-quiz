@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wolf-frontend-quiz/static/css/main.0bae921f.css",
-    "main.js": "/wolf-frontend-quiz/static/js/main.68d567b7.js",
+    "main.css": "/wolf-frontend-quiz/static/css/main.3a9c8883.css",
+    "main.js": "/wolf-frontend-quiz/static/js/main.1b518f6d.js",
     "static/media/Rubik-VariableFont_wght.ttf": "/wolf-frontend-quiz/static/media/Rubik-VariableFont_wght.3a4acc0356c6ea73f2c3.ttf",
     "static/media/Rubik-Italic-VariableFont_wght.ttf": "/wolf-frontend-quiz/static/media/Rubik-Italic-VariableFont_wght.d83d9d961a7aaca406c2.ttf",
     "static/media/Rubik-Medium.ttf": "/wolf-frontend-quiz/static/media/Rubik-Medium.0e121b4fa4d6e9bc5c69.ttf",
@@ -13,15 +13,17 @@
     "static/media/icon-sun-light.svg": "/wolf-frontend-quiz/static/media/icon-sun-light.b3b23bea296f86a7f2c14d4d8eaa2b4d.svg",
     "static/media/icon-js.svg": "/wolf-frontend-quiz/static/media/icon-js.a62162800ae2979d4250f620d1301b9f.svg",
     "index.html": "/wolf-frontend-quiz/index.html",
+    "static/media/icon-incorrect.svg": "/wolf-frontend-quiz/static/media/icon-incorrect.22188a658072577ad2bec5058968b609.svg",
     "static/media/icon-css.svg": "/wolf-frontend-quiz/static/media/icon-css.115d7e7823ae5239adb8ec5eac937f1a.svg",
     "static/media/icon-html.svg": "/wolf-frontend-quiz/static/media/icon-html.0317136c38b703264ee00bd54200c611.svg",
     "static/media/icon-moon-dark.svg": "/wolf-frontend-quiz/static/media/icon-moon-dark.31aa7165f1fc864be0b9d0a3457a2525.svg",
     "static/media/icon-moon-light.svg": "/wolf-frontend-quiz/static/media/icon-moon-light.8ce3add6042354c900e1fb16bb5f1780.svg",
-    "main.0bae921f.css.map": "/wolf-frontend-quiz/static/css/main.0bae921f.css.map",
-    "main.68d567b7.js.map": "/wolf-frontend-quiz/static/js/main.68d567b7.js.map"
+    "static/media/icon-correct.svg": "/wolf-frontend-quiz/static/media/icon-correct.80b6b3c6b5dd06424058a9a0700912d4.svg",
+    "main.3a9c8883.css.map": "/wolf-frontend-quiz/static/css/main.3a9c8883.css.map",
+    "main.1b518f6d.js.map": "/wolf-frontend-quiz/static/js/main.1b518f6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bae921f.css",
-    "static/js/main.68d567b7.js"
+    "static/css/main.3a9c8883.css",
+    "static/js/main.1b518f6d.js"
   ]
 }
