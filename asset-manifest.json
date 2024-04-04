@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wolf-frontend-quiz/static/css/main.3a9c8883.css",
+    "main.css": "/wolf-frontend-quiz/static/css/main.869da97c.css",
     "main.js": "/wolf-frontend-quiz/static/js/main.1b518f6d.js",
     "static/media/Rubik-VariableFont_wght.ttf": "/wolf-frontend-quiz/static/media/Rubik-VariableFont_wght.3a4acc0356c6ea73f2c3.ttf",
     "static/media/Rubik-Italic-VariableFont_wght.ttf": "/wolf-frontend-quiz/static/media/Rubik-Italic-VariableFont_wght.d83d9d961a7aaca406c2.ttf",
@@ -19,11 +19,11 @@
     "static/media/icon-moon-dark.svg": "/wolf-frontend-quiz/static/media/icon-moon-dark.31aa7165f1fc864be0b9d0a3457a2525.svg",
     "static/media/icon-moon-light.svg": "/wolf-frontend-quiz/static/media/icon-moon-light.8ce3add6042354c900e1fb16bb5f1780.svg",
     "static/media/icon-correct.svg": "/wolf-frontend-quiz/static/media/icon-correct.80b6b3c6b5dd06424058a9a0700912d4.svg",
-    "main.3a9c8883.css.map": "/wolf-frontend-quiz/static/css/main.3a9c8883.css.map",
+    "main.869da97c.css.map": "/wolf-frontend-quiz/static/css/main.869da97c.css.map",
     "main.1b518f6d.js.map": "/wolf-frontend-quiz/static/js/main.1b518f6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a9c8883.css",
+    "static/css/main.869da97c.css",
     "static/js/main.1b518f6d.js"
   ]
 }
